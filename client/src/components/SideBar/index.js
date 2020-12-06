@@ -22,9 +22,9 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2),
   },
   title: {
-    fontSize:'12px',
+    fontSize: '12px',
     [theme.breakpoints.up('sm')]: {
-      fontSize:'18px',
+      fontSize: '18px',
       display: 'block',
     },
   },
@@ -78,23 +78,23 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const mock = {
-    total:22,
-    list:[{id:1}]
-    
+  total: 22,
+  list: [{ id: 1 }]
+
 }
 
 const SideBar = cartData => {
 
-  const { shoppingCartList, total:totalCart } = useSelector(
+  const { shoppingCartList, total: totalCart } = useSelector(
     state => state.shoppingCart,
   );
-  
+
   var style = {
-      href : {textDecoration: 'none', color: 'white'},      
+    href: { textDecoration: 'none', color: 'white' },
   }
-  const total = parseFloat(totalCart.toFixed(2)).toLocaleString("pt-BR",{
+  const total = parseFloat(totalCart.toFixed(2)).toLocaleString("pt-BR", {
     // Ajustando casas decimais
-    minimumFractionDigits: 2,  
+    minimumFractionDigits: 2,
     maximumFractionDigits: 2
   });
   const classes = useStyles();
@@ -148,12 +148,12 @@ const SideBar = cartData => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-          <Typography className={classes.title} variant="h6" noWrap>
-          <Link to='/' style={style.href}>
-            E-Coomerce
+      <Typography className={classes.title} variant="h6" noWrap>
+        <Link to='/' style={style.href}>
+          E-Coomerce
           </Link>
-          </Typography>
-          
+      </Typography>
+
 
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -174,23 +174,23 @@ const SideBar = cartData => {
       <AppBar position="fixed">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-          <Link to='/' style={style.href}>
-            E-Coomerce
+            <Link to='/' style={style.href}>
+              E-Coomerce
           </Link>
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-          <Link to='/carrinho' style={style.href}>
-            <IconButton aria-label="Show 4 new mails" color="inherit">
-              <Typography className={classes.title} variant="h6" noWrap>
-                R$ {total}
-              </Typography>
-              <Badge badgeContent={shoppingCartList.length} color="secondary">
-                <Cart /> 
-              </Badge>
-            </IconButton>
-          </Link>
-         <IconButton
+            <Link to='/carrinho' style={style.href}>
+              <IconButton aria-label="Show 4 new mails" color="inherit">
+                <Typography className={classes.title} variant="h6" noWrap>
+                  R$ {total}
+                </Typography>
+                <Badge badgeContent={shoppingCartList.length} color="secondary">
+                  <Cart />
+                </Badge>
+              </IconButton>
+            </Link>
+            <IconButton
               edge="end"
               aria-label="Account of current user"
               aria-controls={menuId}
@@ -202,16 +202,16 @@ const SideBar = cartData => {
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
-          <Link to='/carrinho' style={style.href}>
-            <IconButton aria-label="Show 4 new mails" color="inherit">
-              <Typography className={classes.title} variant="h6" noWrap>
-                R$ {total}
-              </Typography>
-              <Badge badgeContent={shoppingCartList.length} color="secondary">
-                <Cart /> 
-              </Badge>
-            </IconButton>
-          </Link>
+            <Link to='/carrinho' style={style.href}>
+              <IconButton aria-label="Show 4 new mails" color="inherit">
+                <Typography className={classes.title} variant="h6" noWrap>
+                  R$ {total}
+                </Typography>
+                <Badge badgeContent={shoppingCartList.length} color="secondary">
+                  <Cart />
+                </Badge>
+              </IconButton>
+            </Link>
             <IconButton
               aria-label="Show more"
               aria-controls={mobileMenuId}

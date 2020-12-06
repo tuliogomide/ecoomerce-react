@@ -6,11 +6,11 @@ import { Container } from '@material-ui/core';
 
 
 const Main = () => {
-	return (
-		<Container style={{marginTop:100}}>
-			<ProductsList />
-		</Container>
-	)
+  return (
+    <Container style={{ marginTop: 100 }}>
+      <ProductsList />
+    </Container>
+  )
 }
 
 export default Main

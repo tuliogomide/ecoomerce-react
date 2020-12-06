@@ -13,18 +13,18 @@ const { store } = configureStore();
 
 const App = () => {
 
-    return (
-        <div>
-            <Provider store={store}>
-                <Router>
-                    <SideBar />
-                    <Route exact path="/" component={Main} />
-                    <Route exact path="/produtos/:id" component={ProductDetails} />
-                    <Route exact path="/carrinho" component={ShoppingCart} />
-                </Router>
-            </Provider>
-        </div>
-    )
+  return (
+    <div>
+      <Provider store={store}>
+        <Router>
+          <SideBar />
+          <Route exact path="/" component={Main} />
+          <Route exact path="/produtos/:id" component={ProductDetails} />
+          <Route exact path="/carrinho" component={ShoppingCart} />
+        </Router>
+      </Provider>
+    </div>
+  )
 }
 
 export default App
